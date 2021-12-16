@@ -1,0 +1,94 @@
+/* Apply to all elements */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    color: white;
+    font: x-large;
+    font-style: oblique;
+}
+
+/* COLORS and FONTS */
+body {
+    color: blue;
+    text-align: center;
+}
+
+header {
+    margin: darkgreen 20px;
+    height: 100px;
+    background: darkgreen;
+    font-size: 150%;
+    vertical-align: middle;
+}
+
+main {
+    background: Lightgreen;
+    background-image: Snow;
+    text-align: left;
+}
+
+footer {
+    background: darkred;
+}
+
+.right-sidebar {
+    background: red;
+    color: gainsboro;
+}
+
+/* The links can be represented as a restyled list */
+.holygrail-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    }
+
+.holygrail-menu a {
+    display: block;
+    padding: 0.5em 0;
+    color: inherit;
+    text-decoration: none;
+    }
+
+.holygrail-menu a:hover,.holygrail-menu a:focus {
+    padding: .5em 1em;
+    background: darkred;
+    color: white;
+    }
+
+/* Can choose to default to cell layout or desktop layout */
+/* default cell layout */
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+/* full screen type layout */
+@media all and (min-width: 768px) {
+    .container {
+        flex-direction: row;
+        flex-wrap: wrap;    
+    } 
+
+    header, 
+    footer {
+        width: 100%;
+    }
+
+    main {
+        flex: 1;
+        order: 2;
+        /* vh is viewport height, a screen unit */
+        min-height: 80vh;
+    }
+    
+    .right-sidebar {
+        flex: 0.5;
+        order: 3;
+    }
+
+    footer {
+        order: 4;
+    }
+}
